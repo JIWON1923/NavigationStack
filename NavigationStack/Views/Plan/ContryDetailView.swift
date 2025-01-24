@@ -12,7 +12,6 @@ struct ContryDetailView: View {
     var body: some View {
         VStack {
             Text("\(city.name)의 명소")
-                .font(.title)
             
             List {
                 ForEach(city.attractions, id: \.self) { attraction in
@@ -23,6 +22,7 @@ struct ContryDetailView: View {
                 }
             }
         }
+        .navigationTitle("Contry Detail View")
     }
 }
 

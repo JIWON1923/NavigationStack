@@ -20,6 +20,18 @@ struct City: Identifiable, Hashable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
     }
+    
+    init(name: String, country: String, attractions: [String]) {
+        self.name = name
+        self.country = country
+        self.attractions = attractions
+    }
+    
+    init() {
+        name = ""
+        country = ""
+        attractions = []
+    }
 }
 
 var cities = [

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CityListView: View {
     
-    @State private var path: [CityDestination] = []
+    @StateObject private var router = Router<CityDestination>()
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $router.paths) {
             List {
                 ForEach(cities) { city in
                     NavigationLink(
@@ -21,6 +21,7 @@ struct CityListView: View {
                     )
                 }
             }
+            .navigationTitle("City List View")
             .navigationDestination(for: CityDestination.self) { destination in
                 switch destination {
                 case .contry(let city):
@@ -32,6 +33,7 @@ struct CityListView: View {
                 }
             }
         }
+        .environmentObject(router)
     }
 }
 

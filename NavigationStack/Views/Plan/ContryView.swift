@@ -12,12 +12,15 @@ struct ContryView: View {
     
     var body: some View {
         
-        Text("Welcome to \(city.country)")
-        
-        NavigationLink(
-            city.name,
-            value: CityDestination.contryDetail(city)
-        )
+        VStack {
+            Text("Welcome to \(city.country)")
+            
+            NavigationLink(
+                city.name,
+                value: CityDestination.contryDetail(city)
+            )
+        }
+        .navigationTitle("Contry View")
     }
 }
 
