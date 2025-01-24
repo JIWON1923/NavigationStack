@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum MainTabs: Hashable {
-    case home
-    case plan
-    case setting
-}
-
 struct ContentView: View {
     
     @State private var selectedTab: MainTabs = .home
@@ -23,7 +17,7 @@ struct ContentView: View {
                 HomeView()
             }
             Tab("Plan", systemImage: "note", value: .plan) {
-                PlanView()
+                CityListView()
             }
             Tab("Setting", systemImage: "gearshape", value: .plan) {
                 SettingView()
